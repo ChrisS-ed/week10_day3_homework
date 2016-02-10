@@ -23,6 +23,12 @@ app.use(expressLayouts);
 //Serve js & css files from a public folder
 app.use(express.static(__dirname + '/public'));
 
+// Let's get all the farms 
+Farm.find(function(err, farms) {
+  if (err) console.log(err)
+  app.locals.farms = farms;
+})
+
 // ############ YOU CAN ADD YOUR ROUTES BELOW HERE
 app.get("/", function(req, res){
   // INDEX
@@ -79,15 +85,9 @@ app.post("/:id", function(req, res){
   //UPDATE
   Animal.findByIdAndUpdate(req.params.id, req.body, function(err, animal){
     // if (err) console.log(err);
-    res.redirect('/' + req.params.id )    
+    res.redirect('/')    
   })
 })
-
-//Let's get all the farms 
-// Farm.find(function(err, farms) {
-//   if (err) console.log(err)
-//   app.locals.farms = farms;
-// })
 
 app.listen(3000, function(){
   console.log("Welcome to the Farm Manager");

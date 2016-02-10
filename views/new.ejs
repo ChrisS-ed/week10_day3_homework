@@ -1,0 +1,41 @@
+<div class="form-container">
+  <form action="/" method="post">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" name="name">
+    </div>
+    
+    <div>
+      <label for="type">Type:</label>
+      <input type="text" name="type">
+    </div>
+
+    <div>
+      <label for="noise">Noise:</label>
+      <input type="text" name="noise">
+    </div>
+
+    <div>
+      <label for="health">Health:</label>
+      <input type="number" name="health">
+    </div>
+
+    <div>
+      <label for="outlook">Outlook:</label>
+      <input type="text" name="outlook">
+    </div>
+
+    <div>
+      <label for="noise">Farm:</label>
+      <select name="farm_id">
+        <% for (var j = 0; j < farms.length; j++) { %>
+          <option value="<%= farms[j]._id %>"><%= farms[j].name %></option>
+        <% } %>
+      </select>
+    </div>
+
+    <div>
+      <button type="submit">Create New Animal</button>
+    </div>  
+  </form>
+</div>

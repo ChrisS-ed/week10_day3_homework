@@ -1,0 +1,33 @@
+<div class="form-container">
+  <form action="/<%= animal._id %>" method="post">
+    <input type="hidden" name="_id" value="<%= animal._id %>">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" name="name" value="<%= animal.name %>">
+    </div>
+    
+    <div>
+      <label for="type">Type:</label>
+      <input type="text" name="type" value="<%= animal.type %>">
+    </div>
+
+    <div>
+      <label for="noise">Noise:</label>
+      <input type="text" name="noise" value="<%= animal.noise %>">
+    </div>
+
+    <div>
+      <label for="health">Health:</label>
+      <input type="number" name="health" value="<%= animal.vetReport.health %>">
+    </div>
+
+    <div>
+      <label for="outlook">Outlook:</label>
+      <input type="text" name="outlook" value="<%= animal.vetReport.outlook %>">
+    </div>
+
+    <div>
+      <button type="submit">Update Animal</button>
+    </div>  
+  </form>
+</div>

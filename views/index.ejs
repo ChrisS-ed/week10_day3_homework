@@ -1,0 +1,22 @@
+<ul>
+  <% for (var i = 0; i < animals.length; i++) { %>
+    <li>
+      <h2>
+      <a href="/<%= animals[i].id %>">  
+        <%= animals[i].name %>
+      </a>  
+      </h2> 
+      <ul>
+        <li>Type: <%= animals[i].type %></li>
+        <li>Greeting: <%= animals[i].speak() %></li>
+        <li>Report: <%= animals[i].vetReport %></li>
+        <li>
+          <form action="/<%= animals[i]._id %>/delete" method="post">
+             <button type="submit">Delete >></button>
+          </form>
+        </li>
+      </ul>
+     </li>
+  <% } %>
+</ul>
+<%- include new.ejs %> 

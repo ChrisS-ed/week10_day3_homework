@@ -89,6 +89,14 @@ app.post("/:id", function(req, res){
   })
 })
 
+//DELETE
+app.post('/:id/delete', function(req,res) {
+  Animal.findByIdAndRemove(req.params.id, function(err) {
+    if (err) console.log(err);
+    res.redirect('/');
+  })
+});
+
 app.listen(3000, function(){
   console.log("Welcome to the Farm Manager");
 });
